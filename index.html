@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0689a754abee489295793a05b91a882c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+    
+            <style>
+                #export {
+                    position: absolute;
+                    top: 5px;
+                    right: 10px;
+                    z-index: 999;
+                    background: white;
+                    color: black;
+                    padding: 6px;
+                    border-radius: 4px;
+                    font-family: 'Helvetica Neue';
+                    cursor: pointer;
+                    font-size: 12px;
+                    text-decoration: none;
+                    top: 90px;
+                }
+            </style>
+        
+    <script src="https://rawcdn.githack.com/ljagis/leaflet-measure/2.1.7/dist/leaflet-measure.js"></script>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/ljagis/leaflet-measure/2.1.7/dist/leaflet-measure.css"/>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_0689a754abee489295793a05b91a882c" ></div>
+        
+    <a href='#' id='export'>Export</a>
+</body>
+<script>    
+    
+            var map_0689a754abee489295793a05b91a882c = L.map(
+                "map_0689a754abee489295793a05b91a882c",
+                {
+                    center: [-11.862985, -45.683368],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_0689a754abee489295793a05b91a882c);
+
+            
+
+        
+    
+            var tile_layer_5cfc312809634c22b57c9d047d60ac60 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_8ec54b1264824bf1a4dc255f04b43a27 = new L.Control.MiniMap(
+                tile_layer_5cfc312809634c22b57c9d047d60ac60,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_0689a754abee489295793a05b91a882c.addControl(mini_map_8ec54b1264824bf1a4dc255f04b43a27);
+        
+    
+            var tile_layer_c82fa5c4e4ba429ab8f46a29a8f89d7f = L.tileLayer(
+                "http://{s}.google.com/vt/lyrs=s\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "google", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 5, "noWrap": false, "opacity": 1, "subdomains": ["mt0", "mt1", "mt2", "mt3"], "tms": false}
+            ).addTo(map_0689a754abee489295793a05b91a882c);
+        
+    
+            var tile_layer_1d533840ec3d429889ab33222df40102 = L.tileLayer(
+                "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+                {"attribution": "Map data: \u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href=\"http://viewfinderpanoramas.org\"\u003eSRTM\u003c/a\u003e | Map style: \u0026copy; \u003ca href=\"https://opentopomap.org\"\u003eOpenTopoMap\u003c/a\u003e (\u003ca href=\"https://creativecommons.org/licenses/by-sa/3.0/\"\u003eCC-BY-SA\u003c/a\u003e)", "detectRetina": false, "maxNativeZoom": 17, "maxZoom": 17, "minZoom": 5, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0689a754abee489295793a05b91a882c);
+        
+    
+        function geo_json_905ea88cb65b4bb581eb63794e9fb170_onEachFeature(feature, layer) {
+            layer.on({
+                click: function(e) {
+                    map_0689a754abee489295793a05b91a882c.fitBounds(e.target.getBounds());
+                }
+            });
+        };
+        var geo_json_905ea88cb65b4bb581eb63794e9fb170 = L.geoJson(null, {
+                onEachFeature: geo_json_905ea88cb65b4bb581eb63794e9fb170_onEachFeature,
+            
+        }).addTo(map_0689a754abee489295793a05b91a882c);
+
+        function geo_json_905ea88cb65b4bb581eb63794e9fb170_add (data) {
+            geo_json_905ea88cb65b4bb581eb63794e9fb170.addData(data);
+        }
+            geo_json_905ea88cb65b4bb581eb63794e9fb170_add({"features": [{"geometry": {"coordinates": [[[-45.65643310546875, -11.857607181511677], [-45.65214157104492, -11.841478864107899], [-45.70037841796875, -11.83341434835159], [-45.703468322753906, -11.8453430269124], [-45.65643310546875, -11.857607181511677]]], "type": "Polygon"}, "properties": {}, "type": "Feature"}, {"geometry": {"coordinates": [-45.65643310546875, -11.857271184616796], "type": "Point"}, "properties": {}, "type": "Feature"}, {"geometry": {"coordinates": [-45.703468322753906, -11.844839008776399], "type": "Point"}, "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+        
+    
+            geo_json_905ea88cb65b4bb581eb63794e9fb170.bindTooltip(
+                `<div>
+                     Reserva Legal
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var options = {
+              position: "topleft",
+              draw: {},
+              edit: {},
+            }
+            // FeatureGroup is to store editable layers.
+            var drawnItems = new L.featureGroup().addTo(
+                map_0689a754abee489295793a05b91a882c
+            );
+            options.edit.featureGroup = drawnItems;
+            var draw_control_7af0a7c0a3994bd6ae3b4ef27c6c8828 = new L.Control.Draw(
+                options
+            ).addTo( map_0689a754abee489295793a05b91a882c );
+            map_0689a754abee489295793a05b91a882c.on(L.Draw.Event.CREATED, function(e) {
+                var layer = e.layer,
+                    type = e.layerType;
+                var coords = JSON.stringify(layer.toGeoJSON());
+                layer.on('click', function() {
+                    alert(coords);
+                    console.log(coords);
+                });
+                drawnItems.addLayer(layer);
+             });
+            map_0689a754abee489295793a05b91a882c.on('draw:created', function(e) {
+                drawnItems.addLayer(e.layer);
+            });
+            
+            document.getElementById('export').onclick = function(e) {
+                var data = drawnItems.toGeoJSON();
+                var convertedData = 'text/json;charset=utf-8,'
+                    + encodeURIComponent(JSON.stringify(data));
+                document.getElementById('export').setAttribute(
+                    'href', 'data:' + convertedData
+                );
+                document.getElementById('export').setAttribute(
+                    'download', "data.geojson"
+                );
+            }
+            
+        
+    
+            var layer_control_6983e09c0b8f435cb30e8dbac57ef9e3 = {
+                base_layers : {
+                    "Sat\u00e9lite" : tile_layer_c82fa5c4e4ba429ab8f46a29a8f89d7f,
+                    "Topografia" : tile_layer_1d533840ec3d429889ab33222df40102,
+                },
+                overlays :  {
+                    "Reserva Legal" : geo_json_905ea88cb65b4bb581eb63794e9fb170,
+                },
+            };
+            L.control.layers(
+                layer_control_6983e09c0b8f435cb30e8dbac57ef9e3.base_layers,
+                layer_control_6983e09c0b8f435cb30e8dbac57ef9e3.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_0689a754abee489295793a05b91a882c);
+            tile_layer_1d533840ec3d429889ab33222df40102.remove();
+        
+    
+            var measure_control_70158a9a92ca4f478028d5c6b4e5ff7c = new L.Control.Measure(
+                {"position": "topright", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "meters", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "miles"});
+            map_0689a754abee489295793a05b91a882c.addControl(measure_control_70158a9a92ca4f478028d5c6b4e5ff7c);
+
+        
+    
+            var marker_8c101744be8944d88debd0d687fdeaa6 = L.marker(
+                [-11.899775, -45.697273],
+                {}
+            ).addTo(map_0689a754abee489295793a05b91a882c);
+        
+    
+            var icon_7d15d907710d48f18b3a88c84d9b5fa7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "#F8F88", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_8c101744be8944d88debd0d687fdeaa6.setIcon(icon_7d15d907710d48f18b3a88c84d9b5fa7);
+        
+    
+            marker_8c101744be8944d88debd0d687fdeaa6.bindTooltip(
+                `<div>
+                     Sede da Fazenda
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
